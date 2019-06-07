@@ -1,12 +1,12 @@
 package com.nikolaev.security;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.nikolaev.domain.ApiError;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
-import org.springframework.integration.support.json.Jackson2JsonObjectMapper;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.AuthenticationEntryPoint;
 import org.springframework.stereotype.Component;
@@ -26,7 +26,7 @@ public class JwtAuthenticationEntryPoint implements AuthenticationEntryPoint, Se
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
     @Autowired
-    private Jackson2JsonObjectMapper jackson2JsonObjectMapper;
+    private ObjectMapper mapper;
 
     @Override
     public void commence(HttpServletRequest request,
@@ -38,7 +38,7 @@ public class JwtAuthenticationEntryPoint implements AuthenticationEntryPoint, Se
         ApiError error = new ApiError(HttpStatus.FORBIDDEN, e.getLocalizedMessage(), e.getMessage());
 
         try {
-            String json = jackson2JsonObjectMapper.toJson(error);
+            String json = mapper.writeValueAsString(error);
             response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
             response.setContentType(MediaType.APPLICATION_JSON_VALUE);
             response.setCharacterEncoding(StandardCharsets.UTF_8.toString());

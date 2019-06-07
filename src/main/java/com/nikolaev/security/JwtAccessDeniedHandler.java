@@ -1,12 +1,12 @@
 package com.nikolaev.security;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.nikolaev.domain.ApiError;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
-import org.springframework.integration.support.json.Jackson2JsonObjectMapper;
 import org.springframework.security.access.AccessDeniedException;
 import org.springframework.security.web.access.AccessDeniedHandler;
 import org.springframework.stereotype.Component;
@@ -24,7 +24,7 @@ public class JwtAccessDeniedHandler implements AccessDeniedHandler {
 
 
     @Autowired
-    public Jackson2JsonObjectMapper jackson2JsonObjectMapper;
+    public ObjectMapper mapper;
 
     @Override
     public void handle(HttpServletRequest request, HttpServletResponse response,
@@ -35,7 +35,7 @@ public class JwtAccessDeniedHandler implements AccessDeniedHandler {
         ApiError error = new ApiError(HttpStatus.FORBIDDEN, e.getLocalizedMessage(), e.getMessage());
 
         try {
-            String json = jackson2JsonObjectMapper.toJson(error);
+            String json = mapper.writeValueAsString(error);
             response.setStatus(HttpServletResponse.SC_FORBIDDEN);
             response.setContentType(MediaType.APPLICATION_JSON_VALUE);
             response.setCharacterEncoding(StandardCharsets.UTF_8.toString());

@@ -42,7 +42,7 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 @Service
-@PropertySource("classpath:application.properties")
+//@PropertySource("classpath:application.properties")
 public class UserServiceImpl implements UserService {
 
     private final Logger logger = LoggerFactory.getLogger(this.getClass());

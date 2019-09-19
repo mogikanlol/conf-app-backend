@@ -1,12 +1,9 @@
 package com.nikolaev.submission.dto;
 
 import com.nikolaev.document.dto.DocumentMapper;
-import com.nikolaev.conference_role.ConferenceRole;
 
-import com.nikolaev.conference_role.ConferenceRoleName;
-import com.nikolaev.submission.Submission;
+import com.nikolaev.submission.domain.Submission;
 import com.nikolaev.submission.status.SubmissionStatus;
-import com.nikolaev.submission.status.dto.SubmissionStatusMapper;
 import com.nikolaev.submission_role.SubmissionRoleName;
 import com.nikolaev.submission_user_roles.SubmissionUserRoles;
 import com.nikolaev.user.dto.BriefUserDto;
@@ -15,9 +12,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.stream.Collectors;
 
 public final class SubmissionMapper {

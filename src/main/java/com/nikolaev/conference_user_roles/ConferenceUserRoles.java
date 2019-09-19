@@ -1,7 +1,7 @@
 package com.nikolaev.conference_user_roles;
 
-import com.nikolaev.conference.Conference;
-import com.nikolaev.conference_role.ConferenceRoleListHolder;
+import com.nikolaev.conference.domain.Conference;
+import com.nikolaev.conference_role.domain.ConferenceRoleListHolder;
 import com.nikolaev.user.User;
 
 import javax.persistence.*;

@@ -1,8 +1,9 @@
 package com.nikolaev.conference.dto;
 
-import com.nikolaev.conference.Conference;
+import com.nikolaev.conference.domain.Conference;
+import com.nikolaev.conference_role.domain.ConferenceRole;
+import com.nikolaev.conference_role.domain.ConferenceRoleName;
 import com.nikolaev.conference_user_roles.ConferenceUserRoles;
-import com.nikolaev.conference_role.*;
 import com.nikolaev.submission.dto.SubmissionMapper;
 import com.nikolaev.user.dto.BriefUserDto;
 import com.nikolaev.user.dto.UserMapper;

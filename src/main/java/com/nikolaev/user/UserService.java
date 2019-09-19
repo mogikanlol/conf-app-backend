@@ -2,13 +2,10 @@ package com.nikolaev.user;
 
 
 import com.nikolaev.conference.dto.BriefConferenceDto;
-import com.nikolaev.conference.dto.ConferenceDto;
-import com.nikolaev.conference_request.dto.BriefConferenceRequestDto;
-import com.nikolaev.conference_request.dto.ConferenceRequestDto;
+import com.nikolaev.conference_request.request.dto.BriefConferenceRequestDto;
 import com.nikolaev.review.dto.ReviewDto;
-import com.nikolaev.conference_role.ConferenceRole;
+import com.nikolaev.conference_role.domain.ConferenceRole;
 import com.nikolaev.submission.dto.BriefSubmissionDto;
-import com.nikolaev.submission.dto.SubmissionDto;
 import com.nikolaev.user.dto.BriefUserDto;
 import com.nikolaev.user.dto.BriefUserRolesDto;
 import com.nikolaev.user.dto.UserDto;

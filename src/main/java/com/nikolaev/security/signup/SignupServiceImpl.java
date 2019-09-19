@@ -8,7 +8,6 @@ import com.nikolaev.user.dto.UserMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.mobile.device.Device;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -41,7 +40,7 @@ public class SignupServiceImpl implements SignupService {
     private UserDetailsService userDetailsService;
 
 
-    public JwtAuthenticationResponse signup(SignupRequest signupRequest, Device device) throws SignupException {
+    public JwtAuthenticationResponse signup(SignupRequest signupRequest) throws SignupException {
         User user = new User();
         user.setUsername(signupRequest.getEmail());
         user.setFirstname(signupRequest.getFirstname());
@@ -62,7 +61,7 @@ public class SignupServiceImpl implements SignupService {
             ));
 
             UserDetails userDetails = userDetailsService.loadUserByUsername(user.getUsername());
-            String token = jwtTokenUtil.generateToken(userDetails, device);
+            String token = jwtTokenUtil.generateToken(userDetails);
 
 //            return new JwtAuthenticationResponse(token, userDetails.getUsername());
             return new JwtAuthenticationResponse(token, UserMapper.toDto(userDetails));

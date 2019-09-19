@@ -1,18 +1,14 @@
 package com.nikolaev.user.dto;
 
-import com.nikolaev.conference_role.ConferenceRole;
-import com.nikolaev.conference_role.ConferenceRoleName;
+import com.nikolaev.conference_role.domain.ConferenceRole;
+import com.nikolaev.conference_role.domain.ConferenceRoleName;
 import com.nikolaev.conference_user_roles.ConferenceUserRoles;
 import com.nikolaev.security.JwtUser;
 import com.nikolaev.user.User;
-import com.nikolaev.user.UserRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 

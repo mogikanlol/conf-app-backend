@@ -1,25 +1,20 @@
 package com.nikolaev.user;
 
 
-import com.nikolaev.conference.Conference;
+import com.nikolaev.conference.domain.Conference;
 import com.nikolaev.conference.dto.BriefConferenceDto;
 import com.nikolaev.conference.dto.ConferenceMapper;
-import com.nikolaev.conference_request.dto.BriefConferenceRequestDto;
-import com.nikolaev.conference_request.dto.ConferenceRequestDto;
-import com.nikolaev.conference_request.dto.ConferenceRequestMapper;
+import com.nikolaev.conference_request.request.dto.BriefConferenceRequestDto;
+import com.nikolaev.conference_request.request.dto.ConferenceRequestMapper;
 import com.nikolaev.conference_user_roles.ConferenceUserRoles;
-import com.nikolaev.conference.dto.ConferenceDto;
 import com.nikolaev.conference_user_roles.ConferenceUserRolesRepository;
 import com.nikolaev.review.dto.ReviewDto;
-import com.nikolaev.review.dto.ReviewMapper;
-import com.nikolaev.conference_role.ConferenceRole;
-import com.nikolaev.conference_role.ConferenceRoleName;
-import com.nikolaev.submission.Submission;
+import com.nikolaev.conference_role.domain.ConferenceRole;
+import com.nikolaev.conference_role.domain.ConferenceRoleName;
+import com.nikolaev.submission.domain.Submission;
 import com.nikolaev.submission.dto.BriefSubmissionDto;
-import com.nikolaev.submission.dto.SubmissionDto;
 import com.nikolaev.submission.dto.SubmissionMapper;
 import com.nikolaev.submission_role.SubmissionRoleName;
-import com.nikolaev.submission_user_roles.SubmissionUserRoles;
 import com.nikolaev.user.dto.BriefUserDto;
 import com.nikolaev.user.dto.BriefUserRolesDto;
 import com.nikolaev.user.dto.UserDto;
@@ -29,7 +24,6 @@ import com.nikolaev.security.JwtTokenUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.env.Environment;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -39,7 +33,6 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.*;
-import java.util.stream.Collectors;
 
 @Service
 //@PropertySource("classpath:application.properties")

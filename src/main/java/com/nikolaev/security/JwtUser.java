@@ -1,13 +1,11 @@
 package com.nikolaev.security;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.nikolaev.conference.Conference;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Collection;
 import java.util.Date;
-import java.util.List;
 
 public class JwtUser implements UserDetails {
 

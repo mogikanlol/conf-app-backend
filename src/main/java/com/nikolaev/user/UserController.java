@@ -1,9 +1,8 @@
 package com.nikolaev.user;
 
-import com.nikolaev.conference_request.ConferenceRequestService;
-import com.nikolaev.conference_request.dto.BriefConferenceRequestDto;
+import com.nikolaev.conference_request.request.service.ConferenceRequestService;
+import com.nikolaev.conference_request.request.dto.BriefConferenceRequestDto;
 import com.nikolaev.security.JwtTokenUtil;
-import com.nikolaev.security.service.JwtAuthenticationResponse;
 import com.nikolaev.user.dto.BriefUserDto;
 import com.nikolaev.user.dto.UserDto;
 import org.slf4j.Logger;
@@ -13,12 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.mobile.device.Device;
-import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.web.bind.annotation.*;
 
@@ -43,7 +37,7 @@ public class UserController {
     private ConferenceRequestService conferenceRequestService;
 
     @RequestMapping(method = RequestMethod.POST)
-    public ResponseEntity<?> createUser(@RequestBody UserDto user, Device device) {
+    public ResponseEntity<?> createUser(@RequestBody UserDto user) {
         userService.save(user);
         return ResponseEntity.ok(userService.save(user));
 //        if (userService.save(user)) {

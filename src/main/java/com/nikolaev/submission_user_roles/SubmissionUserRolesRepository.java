@@ -1,6 +1,6 @@
 package com.nikolaev.submission_user_roles;
 
-import com.nikolaev.submission.Submission;
+import com.nikolaev.submission.domain.Submission;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface SubmissionUserRolesRepository extends JpaRepository<SubmissionUserRoles, Long> {

@@ -1,7 +1,7 @@
 package com.nikolaev.submission.status;
 
-import com.nikolaev.document.Document;
-import com.nikolaev.submission.Submission;
+import com.nikolaev.document.domain.Document;
+import com.nikolaev.submission.domain.Submission;
 
 import javax.persistence.*;
 import java.util.List;

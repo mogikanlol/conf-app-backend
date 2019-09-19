@@ -1,6 +1,6 @@
 package com.nikolaev.document.dto;
 
-import com.nikolaev.document.Document;
+import com.nikolaev.document.domain.Document;
 import com.nikolaev.review.dto.ReviewMapper;
 import com.nikolaev.submission.status.SubmissionStatus;
 

@@ -1,6 +1,6 @@
 package com.nikolaev.review.status;
 
-import com.nikolaev.review.Review;
+import com.nikolaev.review.domain.Review;
 
 import javax.persistence.*;
 import java.util.List;

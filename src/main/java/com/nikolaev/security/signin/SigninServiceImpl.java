@@ -5,7 +5,6 @@ import com.nikolaev.security.service.JwtAuthenticationRequest;
 import com.nikolaev.security.service.JwtAuthenticationResponse;
 import com.nikolaev.user.dto.UserMapper;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.mobile.device.Device;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
@@ -27,7 +26,7 @@ public class SigninServiceImpl implements SigninService {
     private UserDetailsService userDetailsService;
 
     @Override
-    public JwtAuthenticationResponse signin(JwtAuthenticationRequest authenticationRequest, Device device) {
+    public JwtAuthenticationResponse signin(JwtAuthenticationRequest authenticationRequest) {
         // Perform the security
         final Authentication authentication = authenticationManager.authenticate(
                 new UsernamePasswordAuthenticationToken(
@@ -40,7 +39,7 @@ public class SigninServiceImpl implements SigninService {
 
         // Reload password post-security so we can generate token
         final UserDetails userDetails = userDetailsService.loadUserByUsername(authenticationRequest.getUsername());
-        final String token = jwtTokenUtil.generateToken(userDetails, device);
+        final String token = jwtTokenUtil.generateToken(userDetails);
 
 //        return new JwtAuthenticationResponse(token, userDetails.getUsername());
 

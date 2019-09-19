@@ -1,6 +1,6 @@
 package com.nikolaev.review.dto;
 
-import com.nikolaev.review.Review;
+import com.nikolaev.review.domain.Review;
 import com.nikolaev.review.status.ReviewStatus;
 import com.nikolaev.user.dto.UserMapper;
 

@@ -1,8 +1,6 @@
 package com.nikolaev.user;
 
-import com.nikolaev.conference.Conference;
-import com.nikolaev.conference_role.ConferenceRoleName;
-import com.nikolaev.conference_user_roles.ConferenceUserRoles;
+import com.nikolaev.conference_role.domain.ConferenceRoleName;
 import com.nikolaev.submission_role.SubmissionRoleName;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;

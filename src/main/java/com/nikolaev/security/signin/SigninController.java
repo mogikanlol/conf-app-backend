@@ -12,7 +12,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.mobile.device.Device;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.web.bind.annotation.*;
@@ -42,19 +41,19 @@ public class SigninController {
     private SigninService signinService;
 
     @RequestMapping(method = RequestMethod.POST)
-    public ResponseEntity<?> createAuthenticationToken(@RequestBody JwtAuthenticationRequest authenticationRequest, Device device) throws AuthenticationException {
+    public ResponseEntity<?> createAuthenticationToken(@RequestBody JwtAuthenticationRequest authenticationRequest) throws AuthenticationException {
 
-        JwtAuthenticationResponse response = signinService.signin(authenticationRequest, device);
+        JwtAuthenticationResponse response = signinService.signin(authenticationRequest);
 
         // Return the token
         return ResponseEntity.ok(response);
     }
 
     @RequestMapping(value = "/confirmation", method = RequestMethod.POST)
-    public ResponseEntity<?> confirmEmail(@RequestBody String token, Device device) throws UserNotFoundException {
+    public ResponseEntity<?> confirmEmail(@RequestBody String token) throws UserNotFoundException {
         User user = userService.confirmEmail(token);
 
-        String jwtToken = jwtTokenUtil.generateToken(user, device);
+        String jwtToken = jwtTokenUtil.generateToken(user);
 //        return ResponseEntity.ok(new JwtAuthenticationResponse(jwtToken, user.getUsername()));
         return ResponseEntity.ok(new JwtAuthenticationResponse(jwtToken));
 

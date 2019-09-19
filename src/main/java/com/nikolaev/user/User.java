@@ -1,9 +1,9 @@
 package com.nikolaev.user;
 
 import com.nikolaev.conference_user_roles.ConferenceUserRoles;
-import com.nikolaev.conference_request.ConferenceRequest;
-import com.nikolaev.review.Review;
-import com.nikolaev.submission.Submission;
+import com.nikolaev.conference_request.request.domain.ConferenceRequest;
+import com.nikolaev.review.domain.Review;
+import com.nikolaev.submission.domain.Submission;
 import com.nikolaev.submission_user_roles.SubmissionUserRoles;
 
 

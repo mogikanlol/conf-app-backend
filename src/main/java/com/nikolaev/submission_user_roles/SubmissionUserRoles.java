@@ -1,7 +1,7 @@
 package com.nikolaev.submission_user_roles;
 
 
-import com.nikolaev.submission.Submission;
+import com.nikolaev.submission.domain.Submission;
 import com.nikolaev.submission_role.SubmissionRole;
 import com.nikolaev.user.User;
 

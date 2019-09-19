@@ -60,13 +60,6 @@
             <version>${jjwt.version}</version>
         </dependency>
 
-        <!--Spring mobile-->
-        <dependency>
-            <groupId>org.springframework.mobile</groupId>
-            <artifactId>spring-mobile-device</artifactId>
-            <version>RELEASE</version>
-        </dependency>
-
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>

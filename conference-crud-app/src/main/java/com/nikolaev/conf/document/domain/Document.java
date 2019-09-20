@@ -1,7 +1,7 @@
-package com.nikolaev.conf.submission.domain;
+package com.nikolaev.conf.document.domain;
 
-import com.nikolaev.conf.conference.domain.Conference;
-import com.nikolaev.conf.document.domain.Document;
+import com.nikolaev.conf.submission.domain.Submission;
+import com.nikolaev.conf.submission.domain.SubmissionStatus;
 import lombok.Data;
 
 import javax.persistence.Entity;
@@ -12,30 +12,26 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import java.util.List;
 
 @Data
-@Entity
 @Table
-public class Submission {
+@Entity
+public class Document {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String title;
+    private String filename;
 
-    private boolean reviewable;
+    private byte[] data;
 
     @Enumerated(EnumType.STRING)
     private SubmissionStatus status;
 
     @ManyToOne
-    @JoinColumn(name = "conference_id")
-    private Conference conference;
+    @JoinColumn(name = "submission_id")
+    private Submission submission;
 
-    @OneToMany(mappedBy = "submission")
-    private List<Document> documents;
 }

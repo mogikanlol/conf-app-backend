@@ -1,6 +1,6 @@
 INSERT INTO conference (id, acronym, city, country, title, web_page, expiration_date)
 VALUES
-(1, 'MyConf', 'Saratov', 'Russia', 'My conference', 'www.my-conf.ucoz.ru', '2018-06-20'),
+(1, 'MyConf', 'Saratov', 'Russia', 'The First', 'www.my-conf.ucoz.ru', '2018-06-20'),
 (2, 'MyConf', 'Saratov', 'Russia', 'My conference', 'www.my-conf.ucoz.ru', '2018-05-16'),
 (3, 'MyConf', 'Saratov', 'Russia', 'My conference', 'www.my-conf.ucoz.ru', '2018-05-16'),
 (4, 'MyConf', 'Saratov', 'Russia', 'My conference', 'www.my-conf.ucoz.ru', '2018-05-16'),
@@ -13,3 +13,6 @@ VALUES
 (11, 'MyConf', 'Saratov', 'Russia', 'My conference', 'www.my-conf.ucoz.ru','2018-05-16'),
 (12, 'MyConf', 'Saratov', 'Russia', 'My conference', 'www.my-conf.ucoz.ru','2018-05-16'),
 (13, 'MyConf', 'Saratov', 'Russia', 'My conference', 'www.my-conf.ucoz.ru','2018-05-16');
+
+INSERT INTO submission (id, title, reviewable, status, conference_id)
+VALUES (1, 'Test file', FALSE, 'PENDING', 3);

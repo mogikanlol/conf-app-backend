@@ -1,4 +1,4 @@
-package com.nikolaev.conf.conference.service;
+package com.nikolaev.conf;
 
 public class DomainEntityNotFoundException extends RuntimeException {
 

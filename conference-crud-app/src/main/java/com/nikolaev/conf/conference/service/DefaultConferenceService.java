@@ -1,5 +1,6 @@
 package com.nikolaev.conf.conference.service;
 
+import com.nikolaev.conf.DomainEntityNotFoundException;
 import com.nikolaev.conf.conference.domain.Conference;
 import com.nikolaev.conf.conference.repository.ConferenceRepository;
 import lombok.RequiredArgsConstructor;

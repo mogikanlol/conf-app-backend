@@ -1,5 +1,6 @@
 package com.nikolaev.conf.document.domain;
 
+import com.nikolaev.conf.review.domain.Review;
 import com.nikolaev.conf.submission.domain.Submission;
 import com.nikolaev.conf.submission.domain.SubmissionStatus;
 import lombok.Data;
@@ -12,7 +13,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import java.util.List;
 
 @Data
 @Table
@@ -34,4 +37,6 @@ public class Document {
     @JoinColumn(name = "submission_id")
     private Submission submission;
 
+    @OneToMany(mappedBy = "document")
+    private List<Review> reviews;
 }

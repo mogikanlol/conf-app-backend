@@ -2,3 +2,4 @@ rootProject.name = 'conf-app-backend'
 
 include 'conf-app'
 include 'conference-crud-app'
+include 'eureka-discovery'

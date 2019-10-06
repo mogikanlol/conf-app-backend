@@ -5,3 +5,6 @@ logging:
 spring:
   application:
     name: conference-crud-app
+
+server:
+  port: 8081

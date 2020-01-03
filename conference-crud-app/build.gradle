@@ -13,4 +13,8 @@ dependencies {
 
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
     implementation 'com.h2database:h2'
+
+    testCompile 'org.springframework.boot:spring-boot-starter-test'
+    testCompile 'org.junit.jupiter:junit-jupiter-api:5.5.2'
+    testCompile 'org.junit.jupiter:junit-jupiter-engine:5.5.2'
 }

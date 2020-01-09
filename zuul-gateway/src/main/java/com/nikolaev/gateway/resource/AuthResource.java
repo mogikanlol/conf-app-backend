@@ -7,6 +7,8 @@ import com.nikolaev.gateway.service.AuthService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
+
 @RequiredArgsConstructor
 @RestController
 @RequestMapping("/auth")
@@ -14,17 +16,13 @@ public class AuthResource {
 
     private final AuthService authService;
 
-    private final JwtTokenProvider tokenProvider;
-
-    //TODO: validations
     @PostMapping("/login")
-    public String login(@RequestBody SigninRequest signinRequest) {
+    public String login(@RequestBody @Valid SigninRequest signinRequest) {
         return authService.authenticate(signinRequest);
     }
 
-    //TODO: validations
     @PostMapping("/register")
-    public String register(@RequestBody SignupRequest signupRequest) {
+    public String register(@RequestBody @Valid SignupRequest signupRequest) {
         return authService.register(signupRequest);
     }
 

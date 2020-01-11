@@ -39,18 +39,25 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity httpSecurity) throws Exception {
-        JwtAuthenticationTokenFilter jwtAuthenticationTokenFilter =
-                new JwtAuthenticationTokenFilter(jwtTokenProvider, userDetailsService);
+        if (false) {
+            JwtAuthenticationTokenFilter jwtAuthenticationTokenFilter =
+                    new JwtAuthenticationTokenFilter(jwtTokenProvider, userDetailsService);
 
-        httpSecurity
-                .csrf().disable()
-                .authorizeRequests()
-                .antMatchers("/auth/**").permitAll()
-                .anyRequest().authenticated()
-                .and()
-                .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
+            httpSecurity
+                    .csrf().disable()
+                    .authorizeRequests()
+                    .antMatchers("/auth/**").permitAll()
+                    .anyRequest().authenticated()
+                    .and()
+                    .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
 
-        httpSecurity.addFilterBefore(jwtAuthenticationTokenFilter, UsernamePasswordAuthenticationFilter.class);
+            httpSecurity.addFilterBefore(jwtAuthenticationTokenFilter, UsernamePasswordAuthenticationFilter.class);
+        } else {
+            httpSecurity
+                    .csrf().disable()
+                    .authorizeRequests()
+                    .anyRequest().permitAll();
+        }
     }
 
     @Bean
